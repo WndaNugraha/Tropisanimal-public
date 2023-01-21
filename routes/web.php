@@ -13,6 +13,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\kontakcontroller;
 use App\Http\Controllers\Kontak2Controller;
 use App\Http\Controllers\FileManagerController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
