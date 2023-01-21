@@ -18,10 +18,10 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="d-inline"><img src="{{ asset('images/berita/' . $data1->image)  }}" alt=""
-                                class="img-fluid d-inline" style="Height:auto;"> 
-                            <h1><b> {{$berita->title}} </b></h1>
-                        </div>
+    <div class="d-inline"><img src="{{  $berita->image  }}" alt=""
+        class="img-fluid d-inline" style="Height:auto;"> 
+            <h1><b> {{$berita->title}} </b></h1>
+        </div>
                     </div>
                     <br>
                     {!! $berita->body !!}

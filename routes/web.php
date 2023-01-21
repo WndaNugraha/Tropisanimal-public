@@ -12,6 +12,7 @@ use App\Http\Controllers\blogartikelcontroller;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\kontakcontroller;
 use App\Http\Controllers\Kontak2Controller;
+use App\Http\Controllers\FileManagerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,11 +55,18 @@ route::post('/logout', [logincontroller::class, 'logout']);
 
 
 route::get('/dashboard', [dashboard::class, 'index'])->middleware('auth');
-Route::resource('/dashboard/artikel', artikelcontroller::class)->middleware('auth');
+Route::resource('/dashboard/artikel', artikelcontroller::class);
 Route::resource('/dashboard/visimisi', visimisicontroller::class)->middleware('auth');
 Route::resource('/dashboard/berita', beritacontroller::class)->middleware('auth');
 Route::resource('/dashboard/galeri', galericontroller::class)->middleware('auth');
 Route::resource('/dashboard/kontaks', Kontak2Controller::class)->middleware('auth');
+
+//file Manager
+Route::get('filemanager', [FileManagerController::class, 'index']);
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 
 route::group(['prefix' => 'admin', 'middleware' => ['auth', 'isAdmin']],function(){
 ;

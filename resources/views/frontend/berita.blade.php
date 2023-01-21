@@ -89,7 +89,7 @@
                 <a href="/Showberita/{{$data['slug']}}" class="text-decoration-none">
                     <div class="card card-show w-100" style="height: 21rem;">
                         <div class="card-img-top    w-100 ">
-                            <img src="{{ asset('images/berita/' . $data->image)  }}" alt="" class="img-fluid berita-image">
+                            <img src="{{ $data->image  }}" alt="" class="img-fluid berita-image">
                         </div>
                         <div class="card-body ">
                             <b>

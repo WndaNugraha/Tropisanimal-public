@@ -16,14 +16,32 @@
                     <div class="card-body p-4 p-lg-5 text-black">
 
                         <div class=" mb-4 ">
-                            <label class="form-label">Upload Image</label>
+                            <!-- <label class="form-label">Upload Image</label>
                             <input class="form-control form-control-lg @error('image') is-invalid @enderror"
                                 id="formFileLg" type="file" name="image">
                             @error('image')
                             <div class="invalid-feedback">
                                 {{$message}}
                             </div>
-                            @enderror
+                            @enderror -->
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <a
+                                        id="lfm"
+                                        data-input="thumbnail"
+                                        data-preview="holder"
+                                        class="btn btn-outline-secondary">
+                                        <i class="fa fa-picture-o"></i>
+                                        Choose
+                                    </a>
+                                </span>
+                                <input id="thumbnail"  class="form-control @error('image') is-invalid @enderror" type="text" name="image"  > 
+                                @error('image')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                        </div>
                         </div>
 
                         <div class="form-outline mb-4 form-floating">
@@ -63,6 +81,7 @@
     </header>
 </form>
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
     integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -72,4 +91,10 @@ document.addEvenListener('trix-file-accept', function(e) {
 });
 </script>
 
+@endsection
+
+@section('scripts')
+<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+<script>var route_prefix = "../../laravel-filemanager";
+ $('#lfm').filemanager('image', {prefix: route_prefix});</script>
 @endsection

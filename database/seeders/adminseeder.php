@@ -21,8 +21,6 @@ class adminseeder extends Seeder
         $admin->username = "A W A N 1 0 7";
         $admin->email = "wandanugraha@gmail.com";
         $admin->password = bcrypt('12345678');
-        $admin->role = "admin";
-        $admin->image = "{{asset('ASET/x1/profile.png')}}";
         $admin->save();
 
 

@@ -16,7 +16,7 @@
 
                     <div class="card-body p-4 p-lg-5 text-black">
 
-                        <div class=" mb-4 ">
+                        <!-- <div class=" mb-4 ">
                             <label class="form-label">Upload Image</label>
                             <input class="form-control form-control-lg @error('image') is-invalid @enderror"
                                 id="formFileLg" type="file" name="image">
@@ -25,7 +25,28 @@
                                 {{$message}}
                             </div>
                             @enderror
+                        </div> -->
+
+                        <div class="input-group">
+                                <span class="input-group-btn">
+                                    <a
+                                        id="lfm"
+                                        data-input="thumbnail"
+                                        data-preview="holder"
+                                        class="btn btn-outline-secondary">
+                                        <i class="fa fa-picture-o"></i>
+                                        Choose
+                                    </a>
+                                </span>
+                                <input id="thumbnail"  class="form-control @error('image') is-invalid @enderror" type="text" name="image"  > 
+                                @error('image')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
                         </div>
+                                
+                                <img id="holder" style="margin-top:15px;max-height:100px;">
 
 
                         <div class="pt-1 mb-4">
@@ -39,4 +60,12 @@
     </header>
 </form>
 
+
+
+@endsection
+
+@section('scripts')
+<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+<script>var route_prefix = "../../laravel-filemanager";
+ $('#lfm').filemanager('image', {prefix: route_prefix});</script>
 @endsection

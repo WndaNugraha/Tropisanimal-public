@@ -47,8 +47,8 @@
         <div class="col-sm-6 col-md-6 col-lg-3 pt-4 ">
             <div class="show-img box-image" data-aos-duration="1100" data-aos-anchor-placement="top-bottom"
                 data-aos="zoom-in">
-                <a href="{{ asset('images/galeri/' . $data->image)  }}" data-lightbox="roadtrip">
-                    <img src="{{ asset('images/galeri/' . $data->image)  }}" alt="">
+                <a href="{{ $data->image  }}" data-lightbox="roadtrip">
+                    <img src="{{ $data->image  }}" alt="">
                 </a>
             </div>
         </div>

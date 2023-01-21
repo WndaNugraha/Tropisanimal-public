@@ -17,7 +17,8 @@ class kontakcontroller extends Controller
     {
         //
         return view('frontend.kontak',[
-            'title' => 'Kontak'
+            'title' => 'Kontak',
+            'kontak' => kontak::all()
         ]);
     }
 
@@ -55,7 +56,7 @@ class kontakcontroller extends Controller
         $kontaks->nama = $request->nama;
         $kontaks->email = $request->email;
         $kontaks->deskripsi = $request->deskripsi;
-        $kontaks->excerpt = Str::limit(strip_tags($request->deskripsi), 20, '...');
+        $kontaks->excerpt = Str::limit(strip_tags($request->deskripsi), 50, '...');
 
 
         $kontaks->save();

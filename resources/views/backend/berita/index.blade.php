@@ -44,8 +44,8 @@
                             <div class="col-md-6 col-lg-6 col-xl-4 pt-3 ">
                                 <div class="card text-center shadow bg-body rounded-4 w-100 overflow-hidden"
                                     style=" height:24rem;">
-                                    <div class="card-img-top">
-                                        <img src="{{ asset('images/berita/' . $data1->image)  }}" alt="" class="w-100"
+                                    <div class="card-img-top box-image2">
+                                        <img src="{{  $data1->image  }}" alt="" class="w-100"
                                             height="200px" class="img-fluid">
                                     </div>
                                     <div class="card-body ">

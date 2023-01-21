@@ -24,7 +24,7 @@ class logincontroller extends Controller
     public function authenticate(Request $request)
     {
 
-        $credentials = $request->validate([
+         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required|min:8'
         ]);
@@ -36,6 +36,7 @@ class logincontroller extends Controller
         }
  
         return back()->with('LoginError','Login failed !!');
+        
     }
 
     public function logout(Request $request)

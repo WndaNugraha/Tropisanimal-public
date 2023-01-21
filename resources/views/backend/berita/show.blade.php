@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <img src="{{ asset('images/berita/' . $data->image)  }}" alt="">
+                            <img src="{{  $data->image  }}" alt="">
                             
                         </div>
                         <br>

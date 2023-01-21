@@ -33,9 +33,9 @@
                         <div class="row">
                             @foreach($datagaleri as $data)
                             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 pt-3">
-                                <div class="card text-center shadow w-100" style=" height:20rem;">
-                                    <div class="card-img-top">
-                                        <img src="{{ asset('images/galeri/' . $data->image)  }}" alt="" class="w-100"
+                                <div class="card text-center shadow w-100" style=" height:15rem;">
+                                    <div class="card-img-top box-image">
+                                        <img src="{{ $data->image  }}" alt="" class="w-100"
                                             height="200px" class="img-fluid">
                                     </div>
                                     <div class="card-body ">

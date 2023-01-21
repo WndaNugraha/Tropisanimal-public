@@ -155,7 +155,7 @@
     </div>
 </div>
 
-<div class="container-xl content-overlay pb-5">
+<div class=" content-overlay pb-5">
     <div class="row" data-aos-duration="1100" data-aos-anchor-placement="top-bottom" data-aos="fade-up">
         <div class="col-md-12 col-lg-6">
             <h5><b class="text-green">Berita</b></h5>
@@ -184,7 +184,7 @@
                 <div class="card card-show w-100" style="height: 21rem;" data-aos-duration="1100"
                         data-aos-anchor-placement="top-bottom" data-aos="zoom-in">
                         <div class="card-img-top w-100 ">
-                            <img src="{{ asset('images/berita/' . $data->image)  }}" alt="" class="img-fluid berita-image">
+                            <img src="{{  $data->image  }}" alt="" class="img-fluid berita-image">
                         </div>
                         <div class="card-body ">
                             <b>
@@ -223,8 +223,8 @@
 <div class="slick_img" data-aos-duration="1000" data-aos-anchor-placement="top-bottom" data-aos="fade-up">
     @foreach($datagaleri as $data)
     <div class="">
-        <a href="{{ asset('images/galeri/' . $data->image)  }}" data-lightbox="models">
-            <img src="{{ asset('images/galeri/' . $data->image)  }}" alt="" class="img-fluid w-100" style="height: 230px;">
+        <a href="{{  $data->image  }}" data-lightbox="models">
+            <img src="{{  $data->image  }}" alt="" class="img-fluid w-100" style="height: 230px;">
         </a>
     </div>
     @endforeach

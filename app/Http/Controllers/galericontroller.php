@@ -45,19 +45,14 @@ class galericontroller extends Controller
     public function store(Request $request)
     {
         //
+
         $data = $request->validate([
-            'image' => 'required|image|file|max:1024',
+            'image' => 'required',
             
         ]);
 
         $galeris = new galeri();
-        if ($request->hasFile('image')) {
-            $foto = $request->file('image');
-            $name = rand(1000, 9999) . $foto->getClientOriginalName();
-            $foto->move('images/galeri/', $name);
-            $galeris->image = $name;
-        }
-
+        $galeris->image = $request->image;
         $galeris->save();
 
         return redirect('/dashboard/galeri')->with('success', 'data created successfully!!');
@@ -105,18 +100,19 @@ class galericontroller extends Controller
         //
         $data = $request->validate([
 
-            'image' => 'required|image|file|max:1024'
+            'image' => 'required'
 
         ]);
         
         $galeris = galeri::findOrFail($id);
-        if ($request->hasFile('image')) {
-            $galeris->deleteImage(); //menghapus foto
-            $foto = $request->file('image');
-            $name = rand(1000, 9999) . $foto->getClientOriginalName();
-            $foto->move('images/galeri/', $name);
-            $galeris->image = $name;
-        }
+        // if ($request->hasFile('image')) {
+        //     $galeris->deleteImage(); //menghapus foto
+        //     $foto = $request->file('image');
+        //     $name = rand(1000, 9999) . $foto->getClientOriginalName();
+        //     $foto->move('images/galeri/', $name);
+        //     $galeris->image = $name;
+        // }
+        $galeris->image = $request->image;
         $galeris->save();
 
         return redirect('/dashboard/galeri')->with('success', 'data created successfully!!');

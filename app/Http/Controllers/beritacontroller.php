@@ -55,22 +55,22 @@ class beritacontroller extends Controller
         $data = $request->validate([
             'title' => 'required|unique:beritas',
             'body' => 'required',
-            'image' => 'required|image|file|max:1024',
+            'image' => 'required',
 
         ]);            
         
-
         $beritas = new berita();
         $beritas->title = $request->title;
         $beritas->body = $request->body;
         $beritas->excerpt = Str::limit(strip_tags($request->body), 80, '...');
         $beritas->excerpttitle = Str::limit(strip_tags($request->title), 45, '...');
-        if ($request->hasFile('image')) {
-            $foto = $request->file('image');
-            $name = rand(1000, 9999) . $foto->getClientOriginalName();
-            $foto->move('images/berita/', $name);
-            $beritas->image = $name;
-        }
+        // if ($request->hasFile('image')) {
+        //     $foto = $request->file('image');
+        //     $name = rand(1000, 9999) . $foto->getClientOriginalName();
+        //     $foto->move('images/berita/', $name);
+        //     $beritas->image = $name;
+        // }
+        $beritas->image = $request->image;
 
         $beritas->save();
 
@@ -122,7 +122,7 @@ class beritacontroller extends Controller
             'title' => 'required',
             'image' => 'required',
             'body' => 'required',
-            'image' => 'image|file|max:1024'
+            'image' => 'required'
 
         ]);
         
@@ -132,13 +132,14 @@ class beritacontroller extends Controller
 
         $beritas = berita::findOrFail($id);
         $beritas->title = $request->title;
-        if ($request->hasFile('image')) {
-            $beritas->deleteImage(); //menghapus foto
-            $foto = $request->file('image');
-            $name = rand(1000, 9999) . $foto->getClientOriginalName();
-            $foto->move('images/berita/', $name);
-            $beritas->image = $name;
-        }
+        // if ($request->hasFile('image')) {
+        //     $beritas->deleteImage(); //menghapus foto
+        //     $foto = $request->file('image');
+        //     $name = rand(1000, 9999) . $foto->getClientOriginalName();
+        //     $foto->move('images/berita/', $name);
+        //     $beritas->image = $name;
+        // }
+        $beritas->image = $request->image;
         $beritas->body = $request->body;
         $beritas->excerpt = Str::limit(strip_tags($request->body), 80, '...');
         $beritas->excerpttitle = Str::limit(strip_tags($request->title), 45, '...');

@@ -5,7 +5,7 @@
     <div class="container">
         <div class="card-body">
             <div class="pt-5 pb-5">
-                <h1 class="text-light"><b>Show Galeri</b></h1>
+                <h1 class="tex-light"><b>Show Galeri</b></h1>
             </div>
         </div>
         <div class="row ">
@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="text-center">
-                            <div class=""><img src="{{ asset('images/galeri/' . $data->image)  }}" alt=""></div>
+                            <div class=""><img src="{{ $data->image  }}" alt=""></div>
                         </div>
                     </div>
                 </div>

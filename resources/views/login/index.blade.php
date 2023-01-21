@@ -2,11 +2,11 @@
 
 @section('konten')
 
-<section class="vh-100" style="background-size: cover; background-image: url('ASET/x1/bg.png') ;">
+<section class="vh-100" style="background-size: cover; background-image: url('ASET/x1/ab.jpg') ;">
 
-    <div class="container mb-5 py-5">
-        <div class="row d-flex justify-content-center align-items-center pb-5 py-5">
-            <div class=" col-lg-6 pt-5 mt-5">
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center align-items-center py-5">
+            <div class=" col-lg-6 ">
 
                 @if(session()->has('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">

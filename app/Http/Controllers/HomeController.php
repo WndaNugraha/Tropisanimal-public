@@ -7,6 +7,7 @@ use App\Models\artikel;
 use App\Models\berita;
 use App\Models\galeri;
 use App\Models\visimisi;
+use App\Models\kontak;
 
 class HomeController extends Controller
 {
@@ -58,7 +59,7 @@ class HomeController extends Controller
         return view('frontend.tentangkami',[
             'title' => 'Tentang Kami',
             'datavisimisi' => visimisi::all(),
-            'dataartikel' => artikel::find(5)
+            'dataartikel' => artikel::find(3)
         ]);
     }
     public function galeri()
@@ -83,4 +84,5 @@ class HomeController extends Controller
             'artikel' => $artikel
         ]);
     }
+
 }

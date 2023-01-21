@@ -21,6 +21,23 @@
         referrerpolicy="no-referrer-when-downgrade" class=" w-100" alt="{{asset('ASET/x1/map.png')}}"></iframe>
 
 
+<div class="row pt-5">
+    <div class="comment" data-aos-duration="1000" data-aos-anchor-placement="top-bottom" data-aos="fade-up">
+       @foreach($kontak as $data)
+       <div class="col-lg-3 col-md-4 col-sm-6 px-2">
+            <div class="card" style="height:10rem">
+                <div class="card-body">
+                    <h5>{{ $data->nama }}</h5>
+                    <b>{{ $data->subject }}</b><br>
+                    {{ $data->excerpt }}
+                </div>
+            </div>
+        </div>
+       @endforeach
+    </div>
+</div>
+
+
 
     <!-- Form Kontak Kami -->
     <div class="row pt-5">
@@ -169,4 +186,51 @@
     </div>
 </div>
 
+@endsection
+
+@section('scripts')
+<script>
+    $(document).ready(function() {
+$('.comment').slick({
+  dots: true,
+  customPaging: function(slider, i) {
+      // this example would render "tabs" with titles
+      return '<i class="dot"></i>';
+    },
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+    });
+});
+</script>
 @endsection

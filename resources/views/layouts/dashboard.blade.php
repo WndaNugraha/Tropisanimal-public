@@ -29,7 +29,8 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/dist/css/trix.css')}}">
   <!-- css external -->
   <link href="{{asset('css/dashboard.css')}}" type="text/css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
   
 <style>
@@ -120,5 +121,7 @@
 <script src="{{asset('assets/dist/js/pages/dashboard.js')}}"></script>
 <!-- Trix Editor -->
 <script type="text/javascript" src="{{asset('assets/dist/js/trix.js')}}"></script>
+
+@yield('scripts')
 </body>
 </html>
